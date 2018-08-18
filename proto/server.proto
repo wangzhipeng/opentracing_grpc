@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+message TestRequest {
+    string message = 1;
+}
+
+message TestResponse {
+    int64 ret_code = 1;
+    string message = 2;
+}
+
+service Test1 {
+    rpc TestHello (TestRequest) returns (TestResponse);
+}
+
+
+service Test2 {
+    rpc TestWord (TestRequest) returns (TestResponse);
+}
